@@ -32,4 +32,11 @@ public class BoardService {
         return boardRepository.findById(id).get();
     }
 
+    // 특정 게시물 삭제
+
+    public void boardDelete(Integer id){
+        boardRepository.deleteById(id);
+    }
+
+
 }
