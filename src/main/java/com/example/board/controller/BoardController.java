@@ -23,10 +23,12 @@ public class BoardController {
     }
 
     @PostMapping("/board/writepro")
-    public String boardWritePro(Board board){
+    public String boardWritePro(Board board, Model model){
 
         boardService.write(board);
 
+        model.addAttribute("message", "글 작성이 완료 되었습니다");
+        model.addAttribute("searchUrl", "/board/list");
         return "";
     }
 
